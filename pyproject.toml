@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reconator"
+version = "0.1.0"
+description = "Authorized reconnaissance orchestration tool"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Reconator"}]
+
+[project.scripts]
+reconator = "reconator.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
