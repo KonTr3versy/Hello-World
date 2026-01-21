@@ -20,32 +20,6 @@ Reconator shells out to external tools when available:
 
 If a tool is missing, Reconator marks the module as skipped and continues where possible.
 
-### Installing tools
-
-Use your OS package manager or official releases to install the required binaries.
-
-**Ubuntu/Debian**
-
-```bash
-sudo apt-get update
-sudo apt-get install -y nmap sslscan ffuf nuclei
-```
-
-**macOS (Homebrew)**
-
-```bash
-brew install nmap sslscan ffuf nuclei
-```
-
-**Optional domain recon tools**
-
-```bash
-go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-go install github.com/tomnomnom/assetfinder@latest
-go install github.com/owasp-amass/amass/v4/...@latest
-go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest
-```
-
 ## Usage
 
 > **Warning:** Only run this tool against systems you are explicitly authorized to test.
@@ -137,3 +111,4 @@ All outputs live under `<output>/<engagement-name>/`.
 - Derived targets from domain recon are **not** scanned unless `--scan-derived` is set.
 - When `--scan-derived` is enabled, only targets within `--scope-allow-cidrs` are scanned.
 - Use `--resume/--no-resume` to control resumability.
+
