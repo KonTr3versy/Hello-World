@@ -5,8 +5,12 @@ Reconator is a Python 3 CLI tool for orchestrating **authorized** reconnaissance
 ## Installation
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -e .
 ```
+
+If your OS uses externally managed Python (PEP 668), use a virtualenv as shown above or install via `pipx`.
 
 ### Prerequisites
 
@@ -19,6 +23,32 @@ Reconator shells out to external tools when available:
 - Optional for domain recon: `subfinder`, `assetfinder`, `amass`, `dnsx`, `massdns`
 
 If a tool is missing, Reconator marks the module as skipped and continues where possible.
+
+### Installing tools
+
+Use your OS package manager or official releases to install the required binaries.
+
+**Ubuntu/Debian**
+
+```bash
+sudo apt-get update
+sudo apt-get install -y nmap sslscan ffuf nuclei
+```
+
+**macOS (Homebrew)**
+
+```bash
+brew install nmap sslscan ffuf nuclei
+```
+
+**Optional domain recon tools**
+
+```bash
+go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+go install github.com/tomnomnom/assetfinder@latest
+go install github.com/owasp-amass/amass/v4/...@latest
+go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+```
 
 ## Usage
 
@@ -111,4 +141,3 @@ All outputs live under `<output>/<engagement-name>/`.
 - Derived targets from domain recon are **not** scanned unless `--scan-derived` is set.
 - When `--scan-derived` is enabled, only targets within `--scope-allow-cidrs` are scanned.
 - Use `--resume/--no-resume` to control resumability.
-
