@@ -1,0 +1,15 @@
+{
+  "name": "offsec-cheatsheet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Public-facing offensive security tool cheatsheet",
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.4.0",
+    "@docusaurus/preset-classic": "^3.4.0"
+  }
+}
